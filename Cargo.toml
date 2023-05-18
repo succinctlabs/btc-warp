@@ -1,0 +1,42 @@
+[package]
+name = "btc-warp"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.0.19", features = ["derive"] }
+hex = "0.4.3"
+reqwest = { version = "0.11.12", features = ["rustls-tls", "json"], default-features = false }
+sha2 = "0.10.6"
+aws-config = "0.51.0"
+aws-sdk-s3 = "0.21.0"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+
+# plonky2_btc = { path = "../plonky2-btc" }
+plonky2 = { git = "https://github.com/succinctlabs/plonky2.git", branch = "plonky2-btc" }
+plonky2_u32 = { git = "https://github.com/succinctlabs/plonky2.git", branch = "plonky2-btc" }
+plonky2_ecdsa = { git = "https://github.com/succinctlabs/plonky2.git", branch = "plonky2-btc" }
+plonky2_field = { git = "https://github.com/succinctlabs/plonky2.git", branch = "plonky2-btc" }
+
+nakamoto = "0.4.0"
+nakamoto-node = { git = "https://github.com/cloudhead/nakamoto.git" }
+env_logger = "0.10.0"
+log = "0.4.17"
+num = "0.4.0"
+rand = "0.8.5"
+dotenv = "0.15.0"
+rocket = { version = "0.5.0-rc.1", default-features = false, features = ["json"] }
+serde = "1.0.160"
+criterion = { version = "0.4.0", features = ["async_tokio"] }
+itertools = "0.10.5"
+
+[[bin]]
+name = "btc-warp"
+path = "src/main.rs"
+
+[[bench]]
+name = "benchmark"
+harness = false

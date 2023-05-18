@@ -1,0 +1,5 @@
+/target
+.env
+light-client/.nakamoto/*/filters.db
+light-client/.nakamoto/*/peers.json
+Rocket.toml

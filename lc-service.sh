@@ -1,0 +1,1 @@
+cargo run --bin btc-warp light-client & cargo run --bin btc-warp lc-api
